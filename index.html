@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>La fin d'IE</title>
+    <link rel="stylesheet" href="style.css" />
+	<script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
+</head>
+
+<body>
+    <div id="title" style="width:20%;">
+        <p id="coutdown"></p>
+    </div>
+	<div id="fireworks">
+		<span>RIP (or not in peace) Internet Explorer</span>
+	</div>
+</body>
+<script>
+    var countDownDate = new Date("Jun 15, 2022 12:00:00").getTime();
+
+	updateCoundown();
+    var x = setInterval(function() {
+		updateCoundown();
+    }, 1000);
+	
+	function updateCoundown() {
+		var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById('coutdown').innerHTML = days + 'd ' + hours + 'h '
+        + minutes + 'm ' + seconds + 's ';
+
+        if (distance < 0) {
+            clearInterval(x);
+			createFireworks();
+        }
+	}
+	
+	function createFireworks() {
+		const $container = document.querySelector('#fireworks');
+		$container.style.display = 'inline'; 
+		const fireworks = new Fireworks($container, {});
+		document.querySelector('#title').style.display = 'none'; 
+
+		fireworks.start();
+		fireworks.setOptions({ delay: { min: 10, max: 15 }});
+	}
+</script>
+
+</html>

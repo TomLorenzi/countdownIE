@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes rightround {
+    0% {
+        transform: rotate(0deg);
+        margin-left: -50%;
+    }
+    50% {
+        margin-left: 50%;
+    }
+    100% {
+        transform: rotate(360deg);
+        margin-left: -50%;
+    }
+}
+
+#title {
+    animation: rightround 20s infinite linear;
+}
+
+#title p {
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#fireworks {
+	height: 90vh;
+	width: 90vw;
+	display: none;
+	text-align: center;
+}
+
+#fireworks span {
+	opacity: 0.1;
+}
