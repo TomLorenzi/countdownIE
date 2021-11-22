@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <title>La fin d'IE</title>
     <link rel="stylesheet" href="style.css" />
-	<script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
 </head>
 
 <body>
     <div id="title" style="width:20%;">
         <p id="coutdown"></p>
     </div>
-	<div id="fireworks">
-		<span>RIP (or not in peace) Internet Explorer</span>
-	</div>
+    <div id="fireworks">
+        <span>RIP (or not in peace) Internet Explorer</span>
+    </div>
 </body>
 <script>
     var countDownDate = new Date("Jun 15, 2022 12:00:00").getTime();
 
-	updateCoundown();
-    var x = setInterval(function() {
-		updateCoundown();
+    updateCoundown();
+    var x = setInterval(function () {
+        updateCoundown();
     }, 1000);
-	
-	function updateCoundown() {
-		var now = new Date().getTime();
+
+    function updateCoundown() {
+        var now = new Date().getTime();
 
         var distance = countDownDate - now;
 
@@ -36,23 +36,23 @@
 
         // Display the result in the element with id="demo"
         document.getElementById('coutdown').innerHTML = days + 'd ' + hours + 'h '
-        + minutes + 'm ' + seconds + 's ';
+            + minutes + 'm ' + seconds + 's ';
 
         if (distance < 0) {
             clearInterval(x);
-			createFireworks();
+            createFireworks();
         }
-	}
-	
-	function createFireworks() {
-		const $container = document.querySelector('#fireworks');
-		$container.style.display = 'inline'; 
-		const fireworks = new Fireworks($container, {});
-		document.querySelector('#title').style.display = 'none'; 
+    }
 
-		fireworks.start();
-		fireworks.setOptions({ delay: { min: 10, max: 15 }});
-	}
+    function createFireworks() {
+        const $container = document.querySelector('#fireworks');
+        $container.style.display = 'inline';
+        const fireworks = new Fireworks($container, {});
+        document.querySelector('#title').style.display = 'none';
+
+        fireworks.start();
+        fireworks.setOptions({ delay: { min: 10, max: 15 } });
+    }
 </script>
 
 </html>

@@ -28,16 +28,16 @@ body {
 
 #title p {
     font-size: 2em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #fireworks {
-	height: 90vh;
-	width: 90vw;
-	display: none;
-	text-align: center;
+    height: 90vh;
+    width: 90vw;
+    display: none;
+    text-align: center;
 }
 
 #fireworks span {
-	opacity: 0.1;
+    opacity: 0.1;
 }
